@@ -17,4 +17,17 @@ public class pedido {
         idCliente = c;
         arrayIdDetalles = a;
     }
+    public Integer getId(){
+        return id;
+    }
+    public Integer getIdUsuario(){
+        return idUsuario;
+    }
+    public Integer getIdCliente(){
+        return idCliente;
+    }
+    public ArrayList<Integer> getArrayIdDetalles(){
+        return arrayIdDetalles;
+    }
+
 }
