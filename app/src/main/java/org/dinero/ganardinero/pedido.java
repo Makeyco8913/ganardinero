@@ -11,6 +11,9 @@ public class pedido {
     Integer idCliente;
     ArrayList<Integer> arrayIdDetalles;
 
+    public pedido(){
+    }
+
     public pedido(Integer p, Integer u, Integer c, ArrayList<Integer> a){
         id = p;
         idUsuario = u;

@@ -7,4 +7,7 @@ public class usuario {
 
     String name;
 
+    public usuario(){
+    }
+
 }

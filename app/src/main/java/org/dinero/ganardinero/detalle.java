@@ -9,6 +9,9 @@ public class detalle {
     private Integer precio;
     private Integer cantidad;
 
+    public detalle(){
+    }
+
     public detalle(Integer i, Integer ip, Integer p, Integer c){
         id = i;
         idProducto = ip;

@@ -9,6 +9,9 @@ public class producto {
     private Integer existencia;
     private Integer id;
 
+    public producto(){
+    }
+
     public producto(String d, Integer p, Integer e, Integer i){
         descripcion = d;
         precio = p;
