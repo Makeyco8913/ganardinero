@@ -1,0 +1,40 @@
+ganardinero:{
+	pedidos:{
+		<idCliente>:{ //asi va a ser mas facil filtrar los pedidos por clientes
+			<idPedido>:{
+				usuario:<idUsusario>//aka tomapedidor (?)
+				fecha:<fecha>
+				total:<total>
+				//el array de detalles no se si hace falta aca pero creo que mejor si esta aparte para que sea mas facil manejar
+			}
+		}
+	}
+	detalles:{
+		<idPedido>:{ //mismo que pedido, para filtrar mas rapido
+			<idDetalle>{
+				producto:<idProducto>
+				precio:<precio>
+				cantidad:<cantidad>
+			}
+		}
+	}
+	productos:{
+		<idProducto>:{
+			descripcion:<descripcion>
+			exitencia:<exitencia>
+			precio:<precio>
+		}
+	}
+	clientes:{
+		<idCliente>:{
+			nombre:<nombre>
+			ruc:<ruc>
+		}
+	}
+	Usuarios:{
+		<idUsusario>:{
+			username:<username>
+			password:<hash>
+		}
+	}
+}

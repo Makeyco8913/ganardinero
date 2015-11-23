@@ -9,6 +9,7 @@ public class pedido {
     Integer id;
     Integer idUsuario;
     Integer idCliente;
+    String fecha; //el problema con json que no maneja tipo date, no se si separar en dia mes y año
     ArrayList<Integer> arrayIdDetalles;
 
     public pedido(){
