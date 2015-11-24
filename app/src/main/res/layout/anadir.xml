@@ -37,8 +37,8 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="añadir ususario"
-        android:id="@+id/anadirDatos"
+        android:text="añadir usuario"
+        android:id="@+id/crearUser"
         android:layout_marginTop="50dp"
         android:layout_below="@+id/edicion"
         android:layout_alignParentStart="true" />
@@ -48,15 +48,15 @@
         android:layout_height="wrap_content"
         android:text="añadir producto"
         android:id="@+id/crearProduct"
-        android:layout_below="@+id/anadirDatos"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/crearCliente"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="añadir cliente"
         android:id="@+id/crearCliente"
-        android:layout_below="@+id/crearProduct"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/crearUser"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
