@@ -12,7 +12,7 @@ public class Cliente {
     public Cliente(){}
 
     public Cliente(String n, String r, String p){
-        id=n.hashCode()+r.hashCode();
+        id=r.hashCode();
         nombre = n;
         ruc = r;
         pass = p.hashCode();

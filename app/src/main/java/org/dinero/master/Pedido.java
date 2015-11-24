@@ -14,10 +14,10 @@ public class Pedido {
     public Pedido(){}
 
     public Pedido(Integer u, Integer c){
-        id = u.hashCode()+c.hashCode();
         idUsuario = u;
         idCliente = c;
         fecha = Calendar.DATE + (Calendar.MONTH * 100) + (Calendar.YEAR * 10000);
+        id = u.hashCode()+c.hashCode()+fecha.hashCode();
     }
     public Pedido(int i,Integer u, Integer c,Integer f){
         id = i;

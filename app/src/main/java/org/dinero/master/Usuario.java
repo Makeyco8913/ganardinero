@@ -11,7 +11,7 @@ public class Usuario {
     public Usuario(){}
 
     public Usuario(String n, String p){
-        id = n.hashCode()+p.hashCode();
+        id = n.hashCode();
         nombre = n;
         pass = p.hashCode();
     }

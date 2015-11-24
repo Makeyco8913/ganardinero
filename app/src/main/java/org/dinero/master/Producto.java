@@ -12,7 +12,7 @@ public class Producto {
     public Producto(){}
 
     public Producto(String d, Integer p, Integer e){
-        id = d.hashCode()+p.hashCode();
+        id = d.hashCode();
         descripcion = d;
         existencia = e;
         precio = p;

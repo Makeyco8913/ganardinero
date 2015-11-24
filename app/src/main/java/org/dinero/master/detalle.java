@@ -1,5 +1,7 @@
 package org.dinero.master;
 
+import java.util.Calendar;
+
 /**
  * Created by tekor on 24/11/2015.
  */
@@ -24,7 +26,7 @@ public class detalle {
         cantidad = c;
         precio = p;
     }
-    
+
     public int getId(){return id;}
     public Integer getIdProducto(){return idProducto;}
     public Integer getCantidad(){return cantidad;}
