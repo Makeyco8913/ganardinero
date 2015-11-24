@@ -1,4 +1,4 @@
-package org.dinero.ganardinero;
+package org.dinero.master;
 
 import org.junit.Test;
 

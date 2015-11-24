@@ -5,8 +5,8 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "org.dinero.ganardinero"
-        minSdkVersion 16
+        applicationId "org.dinero.master"
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
     }
 }
 
