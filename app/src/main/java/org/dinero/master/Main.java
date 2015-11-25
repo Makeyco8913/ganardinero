@@ -79,21 +79,21 @@ public class Main extends AppCompatActivity {
         findViewById(R.id.listarCliente).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.anadir_cliente);
-                crearCliente();
+                setContentView(R.layout.listar_basic);
+                listarCliente();
             }
         });
         findViewById(R.id.listarProducto).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.anadir_producto);
-                crearProducto();
+                setContentView(R.layout.listar_basic);
+                listarProducto();
             }
         });
         findViewById(R.id.listarUser).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.listar_usuarios);
+                setContentView(R.layout.listar_basic);
                 listarUsuario();
             }
         });
@@ -102,7 +102,6 @@ public class Main extends AppCompatActivity {
     public void listarUsuario(){
         ref = new Firebase(fireUrl).child("Usuario");
         array.clear();
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -119,7 +118,52 @@ public class Main extends AppCompatActivity {
                 array.add("The read failed: " + firebaseError.getMessage());
             }
         });
+        texto = (TextView) findViewById(R.id.texto);
+        texto.setText("Cargando");
+    }
 
+    public void listarCliente(){
+        ref = new Firebase(fireUrl).child("cliente");
+        array.clear();
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Cliente u = postSnapshot.getValue(Cliente.class);
+                    array.add(u.getNombre());
+                    listalista(array);
+                }
+            }
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                array.add("The read failed: " + firebaseError.getMessage());
+            }
+        });
+        texto = (TextView) findViewById(R.id.texto);
+        texto.setText("Cargando");
+    }
+
+    public void listarProducto(){
+        ref = new Firebase(fireUrl).child("producto");
+        array.clear();
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Producto u = postSnapshot.getValue(Producto.class);
+                    array.add(u.getDescripcion());
+                    listalista(array);
+                }
+            }
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                array.add("The read failed: " + firebaseError.getMessage());
+            }
+        });
+        texto = (TextView) findViewById(R.id.texto);
+        texto.setText("Cargando");
 
     }
 
@@ -128,7 +172,14 @@ public class Main extends AppCompatActivity {
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listisima);
         lista.setAdapter(adaptador);
         texto = (TextView) findViewById(R.id.texto);
-        texto.setText(Integer.toString(array.size()));
+        texto.setText("lista completa");
+
+        findViewById(R.id.volver).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                menu();
+            }
+        });
     }
 
     public void crearCliente(){

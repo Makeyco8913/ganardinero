@@ -11,6 +11,14 @@
         android:id="@+id/texto"
         android:layout_gravity="center_horizontal" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="volver al menu principal"
+        android:id="@+id/volver"
+        android:layout_gravity="center_horizontal" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
