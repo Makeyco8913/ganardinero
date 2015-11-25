@@ -34,34 +34,29 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="listar usuarios"
-        android:id="@+id/listarUsuario"
+        android:text="listar usuario"
+        android:id="@+id/listarUser"
+        android:layout_marginTop="50dp"
         android:layout_below="@+id/edicion"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="listar productos"
+        android:text="listar producto"
         android:id="@+id/listarProducto"
-        android:layout_below="@+id/listarUsuario"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="listar clientes"
-        android:id="@+id/listarCliente"
-        android:layout_below="@+id/listarProducto"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="listar pedidos"
-        android:id="@+id/listarPedido"
         android:layout_below="@+id/listarCliente"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="listar cliente"
+        android:id="@+id/listarCliente"
+        android:layout_below="@+id/listarUser"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

@@ -3,14 +3,26 @@ package org.dinero.master;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends AppCompatActivity {
     Firebase ref;
     final String fireUrl = "https://ganardinero.firebaseio.com";
+    List<String> array = new ArrayList<String>();
+    ListView lista;
+    ArrayAdapter<String> adaptador;
+    TextView texto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,19 +74,61 @@ public class Main extends AppCompatActivity {
             }
         });
     }
+
     public void listar(){
         findViewById(R.id.listarCliente).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.listar_cli);
-                listarCliente();
+                setContentView(R.layout.anadir_cliente);
+                crearCliente();
+            }
+        });
+        findViewById(R.id.listarProducto).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.anadir_producto);
+                crearProducto();
+            }
+        });
+        findViewById(R.id.listarUser).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.listar_usuarios);
+                listarUsuario();
             }
         });
     }
 
-    public void listarCliente(){
-        Firebase ref = new Firebase(fireUrl).child("cliente");
+    public void listarUsuario(){
+        ref = new Firebase(fireUrl).child("Usuario");
+        array.clear();
 
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Usuario u = postSnapshot.getValue(Usuario.class);
+                    array.add(u.getNombre());
+                    listalista(array);
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                array.add("The read failed: " + firebaseError.getMessage());
+            }
+        });
+
+
+    }
+
+    public void listalista(List<String> listisima){
+        lista = (ListView)findViewById(R.id.lista);
+        adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listisima);
+        lista.setAdapter(adaptador);
+        texto = (TextView) findViewById(R.id.texto);
+        texto.setText(Integer.toString(array.size()));
     }
 
     public void crearCliente(){
