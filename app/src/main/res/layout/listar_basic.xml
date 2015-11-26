@@ -19,12 +19,6 @@
         android:id="@+id/volver"
         android:layout_gravity="center_horizontal" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"></LinearLayout>
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

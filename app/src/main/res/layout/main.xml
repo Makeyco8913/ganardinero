@@ -50,4 +50,20 @@
         android:id="@+id/listarDatos"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/anadirDatos" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="tomar pedido"
+        android:id="@+id/tomarPedido"
+        android:layout_below="@+id/listarDatos"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="listar pedidos"
+        android:id="@+id/listar"
+        android:layout_below="@+id/tomarPedido"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
